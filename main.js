@@ -21,10 +21,11 @@ const app = {
     addProduct() {
       if (this.newProduct.length > 0) {
         this.products.push({
-          id: 0,
+          id: new Date().toISOString,
           name: this.newProduct,
           qty: 0,
         });
+        this.newProduct = "";
       }
     },
   },
