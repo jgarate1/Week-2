@@ -17,6 +17,15 @@ const app = {
       ],
     };
   },
+  computed: {
+    total() {
+      let sum = 0;
+      this.products.forEach((product) => {
+        sum += product.qty;
+      });
+      return sum;
+    },
+  },
   methods: {
     addProduct() {
       if (this.newProduct.length > 0) {
