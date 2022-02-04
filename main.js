@@ -2,6 +2,7 @@ const app = {
   data() {
     return {
       title: "Inventory App",
+      newProduct: "",
       products: [
         {
           id: 0,
@@ -13,20 +14,18 @@ const app = {
           name: "Orange",
           qty: 5,
         },
-        {
-          id: 2,
-          name: "Tortilla",
-          qty: 10,
-        },
       ],
     };
   },
   methods: {
-    add() {
-      this.counter++;
-    },
-    rest() {
-      this.counter--;
+    addProduct() {
+      if (this.newProduct.length > 0) {
+        this.products.push({
+          id: 0,
+          name: this.newProduct,
+          qty: 0,
+        });
+      }
     },
   },
 };
